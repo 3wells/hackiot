@@ -1,5 +1,4 @@
-import raspberry_pi_handler as raspberry
-
+from raspberry import Raspberry
 from mqqtclient import MqqtClient
 from settings import Settings
 
@@ -15,7 +14,8 @@ class HackIot(object):
 
         client = MqqtClient(s.device_id, s.device_endpoint, s.device_port, 'config/root-ca.pem',
                             'config/private.pem.key', 'config/certificate.pem.crt')
-        client.start_callback_loop(raspberry.callback)
+
+        client.start_callback_loop(Raspberry().callback)
 
 
 if __name__ == "__main__":

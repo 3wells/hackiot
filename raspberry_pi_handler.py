@@ -14,3 +14,9 @@ def callback(client, userdata, message):
         for i in range(len(message.payload) - 16):
             time.sleep(0.5)
             lcd.move_left()
+
+def display_message(mesage):
+    pass
+
+def say_message(message):
+    pass
