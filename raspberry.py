@@ -27,10 +27,10 @@ class Raspberry:
         if self.enable_lcd:
             self.lcd.clear()
             self.lcd.set_backlight(1)
-            self.lcd.message(message.payload)
+            self.lcd.message(message)
 
-            if len(message.payload) > 16:
-                for i in range(len(message.payload) - 16):
+            if len(message) > 16:
+                for i in range(len(message) - 16):
                     time.sleep(0.5)
                     self.lcd.move_left()
 
