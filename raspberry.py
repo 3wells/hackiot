@@ -47,7 +47,7 @@ class Raspberry:
             try:
                 omxprocess = subprocess.Popen(['omxplayer', 'speech.mp3'], stdin=subprocess.PIPE, stdout=None,
                                               stderr=None, bufsize=0)
-                time.sleep(2000)
+                time.sleep(2)
                 omxprocess.stdin.write(b'q')
             except OSError:
                 self.enable_sound = False
